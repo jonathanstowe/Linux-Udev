@@ -27,6 +27,12 @@ class Linux::Udev {
         method new() {
             udev_new();
         }
+
+        sub udev_enumerate_new(Context $c) returns Enumerate is native(LIB) { * }
+
+        method enumerate() returns Enumerate {
+            udev_enumerate_new(self);
+        }
     }
 
     has Context $.context;
