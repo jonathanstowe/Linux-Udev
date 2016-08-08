@@ -9,15 +9,27 @@ class Linux::Udev {
         ...
     }
 
-    class Enumerate is repr('CPointer') {
-
-    }
 
     class ListEntry is repr('CPointer') {
     
     }
 
     class Device is repr('CPointer') {
+
+    }
+
+    class Enumerate is repr('CPointer') {
+        sub udev_enumerate_scan_devices(Enumerate $e) is native(LIB) { * }
+
+        method scan-devices() {
+            udev_enumerate_scan_devices(self);
+        }
+
+        sub udev_enumerate_get_list_entry(Enumerate $e) returns ListEntry is native(LIB) { * }
+
+        method get-list-entry() returns ListEntry {
+            udev_enumerate_get_list_entry(self);
+        }
 
     }
 
