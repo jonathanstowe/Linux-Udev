@@ -1,45 +1,28 @@
 {
   "name": "Linux::Udev",
-  "source-url": null,
+  "source-url": "git://github.com/jonathanstowe/Linux-Udev.git",
   "support": {
-    "source": ""
+    "source": "git://github.com/jonathanstowe/Linux-Udev.git"
   },
   "perl": "6.c",
-  "resources": [
-    
+  "resources": [ 
   ],
   "build-depends": [
-    
   ],
-  "excludes": {
-    
-  },
   "auth": "github:jonathanstowe",
-  "superseded-by": {
-    
-  },
-  "provides": {
-    
-  },
-  "depends": [
-    
-  ],
+  "provides": { "Linux::Udev" : "lib/Linux/Udev.pm"},
+  "depends": [ ],
   "tags": [
+		"linux", "udev", "systemd"
     
   ],
   "license": "perl",
   "test-depends": [
     
   ],
-  "description": null,
-  "emulates": {
-    
-  },
+  "description": "Interface for the udev substem",
   "version": "0.0.1",
   "meta6": "0",
-  "supersedes": {
-    
-  },
   "authors": [
     "Jonathan Stowe <jns+gh@gellyfish.co.uk>"
   ]
