@@ -2,6 +2,8 @@
 
 Access to devices managed by ```udev``` on Linux
 
+[![Build Status](https://travis-ci.org/jonathanstowe/Linux-Udev.svg?branch=master)](https://travis-ci.org/jonathanstowe/Linux-Udev)
+
 ## Synopsis
 
 ```perl6
