@@ -17,5 +17,7 @@ lives-ok {
     }
 }, "devices";
 
+done-testing;
+
 
 # vim: ft=perl6
