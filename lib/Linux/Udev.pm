@@ -118,10 +118,20 @@ class Linux::Udev {
             udev_device_new_from_syspath(self, $syspath);
         }
 
-
+        method devices() {
+            my Enumerate $enumerate = self.enumerate;
+            $enumerate.scan-devices;
+            gather {
+                my ListEntry $list = $enumerate.get-list-entry;
+                while $list {
+                    take self.device-from-path($list.name);
+                    $list = $list.next;
+                }
+            }
+        }
     }
 
-    has Context $.context handles <enumerate>;
+    has Context $.context handles <enumerate devices>;
 
     submethod BUILD() {
         $!context = Context.new;
