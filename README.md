@@ -28,13 +28,13 @@ as part of ```systemd```.
 ## Installation
 
 Assuming you have a working installation of Rakudo Perl 6 the you should be
-able to install this with either ```panda``` or ```zef``` :
+able to install this with ```zef``` :
 
-	panda install Linux::Udev
+	zef install Linux::Udev
 
 	# or from a local clone
 
-	panda install .
+	zef install .
 
 Other installers may become available later, please see their documentation
 for the details.
@@ -44,4 +44,4 @@ for the details.
 This is free software, please see the [LICENCE](LICENCE) file in the
 distribution directory.
 
-© Jonathan Stowe, 2016
+© Jonathan Stowe, 2016, 2017
