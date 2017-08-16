@@ -16,13 +16,13 @@
 		"linux", "udev", "systemd"
     
   ],
-  "license": "perl",
+  "license": "Artistic-2.0",
   "test-depends": [
     
   ],
   "description": "Interface for the udev substem",
   "version": "0.0.1",
-  "meta6": "0",
+  "meta-version": "0",
   "authors": [
     "Jonathan Stowe <jns+gh@gellyfish.co.uk>"
   ]
