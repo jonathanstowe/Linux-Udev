@@ -39,6 +39,49 @@ class Linux::Udev {
 
     class Device is repr('CPointer') {
 
+        sub udev_device_get_devpath(Device $udev_device )   is native(LIB) returns Str { * }
+
+        method devpath(--> Str ) {
+            udev_device_get_devpath(self);
+        }
+
+        sub udev_device_get_subsystem(Device $udev_device ) is native(LIB) returns Str { * }
+
+        method subsystem(--> Str) {
+           udev_device_get_subsystem(self);
+        }
+
+        sub udev_device_get_devtype(Device $udev_device )   is native(LIB) returns Str { * }
+
+        method devtype(--> Str) {
+            udev_device_get_devtype(self);
+        }
+
+        sub udev_device_get_syspath(Device $udev_device )   is native(LIB) returns Str { * }
+
+        method syspath(--> Str) {
+            udev_device_get_syspath(self);
+        }
+
+        sub udev_device_get_sysname(Device $udev_device )   is native(LIB) returns Str { * }
+
+        method sysname(--> Str) {
+            udev_device_get_sysname(self);
+        }
+
+        sub udev_device_get_sysnum(Device $udev_device )    is native(LIB) returns Str { * }
+
+        method sysnum(--> Str) {
+            udev_device_get_sysnum(self);
+        }
+
+        sub udev_device_get_devnode(Device $udev_device)    is native(LIB) returns Str { * }
+
+        method devnode(--> Str) {
+            udev_device_get_devnode(self);
+        }
+
+
     }
 
     class Enumerate is repr('CPointer') {
@@ -68,6 +111,14 @@ class Linux::Udev {
         method enumerate() returns Enumerate {
             udev_enumerate_new(self);
         }
+
+        sub udev_device_new_from_syspath(Context $udev, Str $syspath) is native(LIB) returns Device { * }
+
+        method device-from-path(Str $syspath --> Device) {
+            udev_device_new_from_syspath(self, $syspath);
+        }
+
+
     }
 
     has Context $.context handles <enumerate>;
