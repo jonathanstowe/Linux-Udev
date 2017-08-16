@@ -16,5 +16,6 @@ ok $obj.context.defined, "and it's defined";
 isa-ok $obj.context.enumerate, Linux::Udev::Enumerate, "enumerate";
 
 
+
 done-testing;
 # vim: expandtab shiftwidth=4 ft=perl6

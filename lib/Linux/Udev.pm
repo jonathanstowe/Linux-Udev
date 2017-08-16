@@ -70,7 +70,7 @@ class Linux::Udev {
         }
     }
 
-    has Context $.context;
+    has Context $.context handles <enumerate>;
 
     submethod BUILD() {
         $!context = Context.new;
