@@ -11,7 +11,30 @@ class Linux::Udev {
 
 
     class ListEntry is repr('CPointer') {
-    
+        sub udev_list_entry_get_next(ListEntry $list_entry --> ListEntry) is native(LIB) { * }
+
+        method next(--> ListEntry) {
+            udev_list_entry_get_next(self);
+        }
+
+        sub udev_list_entry_get_by_name(ListEntry $list_entry, Str $name --> ListEntry) is native(LIB) { * }
+
+        method get_by_name(Str $name --> ListEntry) {
+            udev_list_entry_get_by_name(self, $name);
+        }
+
+        sub udev_list_entry_get_name(ListEntry $list_entry --> Str) is native(LIB) { * }
+
+        method name(--> Str) {
+            udev_list_entry_get_name(self);
+        }
+
+        sub udev_list_entry_get_value(ListEntry $list_entry --> Str) is native(LIB) { * }
+
+        method value(--> Str) {
+            udev_list_entry_get_value(self);
+        }
+
     }
 
     class Device is repr('CPointer') {
